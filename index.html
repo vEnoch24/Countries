@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto Mono">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rancho&effect=shadow-multiple|anaglyph">
+    <script defer src="app.js" type="module"></script>
+    <title>Country viewer</title>
+</head>
+<body>
+    <div class="banner">
+        <div class="navbar">
+            <div class="font-effect-anaglyph title"> <a href="http://127.0.0.1:5500/index.html"> COUNTRIES VIEWER </a> </div>
+            <ul>
+                <li><a href="#">Map</a></li>
+                <li><a href="#">views</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="search-field">
+        <label for="search">Search</label>
+        <input type="text" id="search" placeholder="Search Country...">
+
+        <div class="filter">
+            <select id="filterSelect" name="filter-by">
+                <option value="0" selected disabled>Filter By</option>
+                <option value="By-pop">By Population</option>
+                <optgroup label="By Continent">
+                    <option value="Afr">Africa</option>
+                    <option value="Eur">Europe</option>
+                    <option value="Sua">South America</option>
+                    <option value="Noa">North America</option>
+                    <option value="Asi">Asia</option>
+                    <option value="Ant">Antarctica</option>
+                    <option value="Oce">Oceania</option>
+                    <option value="All">All</option>
+                </optgroup>
+            </select>
+        </div>
+    </div>
+
+    <section>
+        <div id="container" class="grid-container">
+                <!-- <div class="item">
+                    <div class="country-card" >
+                        <img id="flag" alt="">
+                        <span class="countryName">Name: </span>
+                        <div id="more-info">
+                            <span class="capital">Capital: </span>
+                            <span class="languages">Languages: </span>
+                            <span class="population">Population: </span>
+                            <span class="continent">Continent: </span>
+                        </div>
+                    </div>
+                </div> -->
+            
+        </div>
+    </section>
+    
+    
+</body>
+
+<footer>
+    <div>countries viewer @2023</div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+</footer>
+</html>
