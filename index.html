@@ -28,8 +28,12 @@
         <div class="filter">
             <select id="filterSelect" name="filter-by">
                 <option value="0" selected disabled>Filter By</option>
-                <option value="By-pop">By Population</option>
                 <optgroup label="By Continent">
+                <optgroup id="population" label="Population">
+                    <option value="Asc">Ascending</option>
+                    <option value="Dsc">Descending</option>
+                </optgroup>
+                <optgroup id="continent" label="By Continent">
                     <option value="Afr">Africa</option>
                     <option value="Eur">Europe</option>
                     <option value="Sua">South America</option>

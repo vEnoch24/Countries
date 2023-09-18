@@ -28,6 +28,7 @@ http.onload = function (){
         let output = ""; 
         console.log(countries.continents);
         countries.sort((a,b) => a.name.common.localeCompare(b.name.common));
+        //countries.sort((a,b) => a.population - b.population);
         for(let country of countries)
         {
          let languageObj = Object.values(country.languages || {});
@@ -85,14 +86,25 @@ http.onload = function (){
         const filterSelect = document.getElementById('filterSelect');
 
         filterSelect.addEventListener('change', handleFilterSelection);
+        filterSelect.addEventListener('change', handleSimpleFilterSelection);
 
         function handleFilterSelection() {
-            const selectedOption = filterSelect.querySelector('optgroup option:checked');
+            const selectedOption = filterSelect.querySelector('#continent option:checked');
             const selectedValue = selectedOption.value;
-
+       
             filterItems(selectedValue);
         }
 
+        function handleSimpleFilterSelection() {
+            const selectedOption = filterSelect.querySelector('#population option:checked');
+            const selectedValue = selectedOption
+
+            if(selectedValue === 'Asc') {
+                countries.sort((a,b) => a.population - b.population);               
+            }else if(selectedValue === 'Dsc') {
+                countries.sort((a,b) => b.population - a.population);
+            }
+        }
 
         function filterItems(selectedValue) {
             if(selectedValue === 'All')
@@ -172,6 +184,7 @@ http.onload = function (){
                     }
                 } 
             }
+            
         }
                 
     }
