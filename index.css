@@ -168,6 +168,7 @@ body {
     border-radius: 90px;
     border-color: var(--color-dark);
     background-color: var(--color-background);
+    color: var(--color-dark);
     font-size: larger;
     font-weight: 400;
     text-transform: capitalize;
