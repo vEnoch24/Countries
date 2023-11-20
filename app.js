@@ -15,7 +15,49 @@ const capital = document.querySelectorAll('.capital');
 const languages = document.querySelectorAll('.languages');
 const population = document.querySelectorAll('.population');
 const continent = document.querySelectorAll('.continent');
+const map = document.querySelector('.map_view');
+const grid = document.querySelector('.grid_view');
+const mapView = document.getElementById('worldmap-view');
+const gridView = document.getElementById('normal-view');
 
+const darkMode = document.querySelector(".dark-mode");
+
+
+map.addEventListener("click", () => {
+    mapView.style.display = "flex";
+    gridView.style.display = "none";
+});
+
+
+grid.addEventListener("click", () => {
+    gridView.style.display = "block";
+    mapView.style.display = "none";
+});
+
+darkMode.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode-variables");
+    darkMode.querySelector("span:nth-child(1)").classList.toggle("active");
+    darkMode.querySelector("span:nth-child(2)").classList.toggle("active");
+  });
+
+document.querySelectorAll(".allPaths").forEach(e => {
+    e.addEventListener("mouseover", function() {
+        window.onmousemove=function(j){
+            x=j.clientX;
+            y=j.clientY;
+            document.getElementById("name").style.top = y-20+"px";
+            document.getElementById("name").style.left = x+10+"px";
+        }
+
+        e.style.fill = "pink";
+        document.getElementById("name").style.opacity = 1;
+        document.getElementById("namep").innerText= e.id;
+    });
+    e.addEventListener("mouseleave", function() {
+        e.style.fill = "#ececec";
+        document.getElementById("name").style.opacity = 0;
+    });
+})
 
 let http = new XMLHttpRequest();
 http.open('get', countriesUrl, true);
@@ -264,21 +306,6 @@ http.onload = function (){
 // }
 
 // fetchData();
-
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        if(entry.isIntersecting){
-            entry.target.classList.remove('hide');
-        } else {
-            entry.target.classList.add('hide');
-        }
-    });
-});
-
-
-const items = document.querySelectorAll('.item');
-items.forEach(item => observer.observe(item));
 
 
 
