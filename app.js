@@ -22,6 +22,23 @@ const gridView = document.getElementById('normal-view');
 
 const darkMode = document.querySelector(".dark-mode");
 
+const nav = document.querySelector('.banner');
+let topOfNav = nav.offsetTop;
+
+function fixNav() {
+    if (window.scrollY > topOfNav) {
+        // document.body.style.paddingTop = nav.offsetHeight + 'px';
+        document.body.style.paddingTop = 0;
+        document.body.classList.add('fixed-nav');
+    } else {
+        document.body.classList.remove('fixed-nav');
+        document.body.style.paddingTop = 0;
+
+    }
+}
+
+window.addEventListener('scroll', fixNav);
+
 
 map.addEventListener("click", () => {
     mapView.style.display = "flex";

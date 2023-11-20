@@ -75,6 +75,7 @@ body {
     background-color: var(--color-background);
     background-size: cover;
     box-shadow: var(--box-shadow);
+    z-index: 80000;
 }
 
 .navbar {
@@ -84,6 +85,11 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.fixed-nav .banner {
+    position: fixed;
+    top: 0;
 }
 
 .title {
@@ -242,14 +248,14 @@ svg path:hover {
     fill: var(--color-primary);
 }
 
-/* section .grid-container {
+section .grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minnmax(150px, auto));
     grid-gap: 10px;
     margin: 20px auto;
     max-width: 1240px;
     padding: 20px;
-} */
+}
 
 section .grid-container .item {
     background-color: var(--color-white);
@@ -310,24 +316,6 @@ section .grid-container .item:hover {
 
 }
 
-/* .hide {
-    opacity: 0;
-    transform: scale(0);
-    transition: all 5s;
-} */
-
-.hide {
-    opacity: 0;
-    transform: scale(0);
-    transition: all 5s;
-}
-
-@media(prefers-reduced-motion) {
-    .item {
-        transition: none;
-    }
-}
-
 #flag {
     border: inherit;
     position: relative;
@@ -338,4 +326,17 @@ footer {
     margin-top: 50px;
     z-index: -2;
     margin-left: 45%;
+}
+
+@media screen and (max-width: 768px) {
+
+    #normal-view section .grid-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5em;
+        max-width: 40%;
+        margin-left: 8%;
+        margin-top: 0%;
+        transition: all ease 0.5s;
+    }
 }
