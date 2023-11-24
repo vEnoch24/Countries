@@ -57,18 +57,19 @@ darkMode.addEventListener("click", () => {
     darkMode.querySelector("span:nth-child(2)").classList.toggle("active");
   });
 
-document.querySelectorAll(".allPaths").forEach(e => {
-    e.addEventListener("mouseover", function() {
-        window.onmousemove=function(j){
-            x=j.clientX;
-            y=j.clientY;
-            document.getElementById("name").style.top = y-20+"px";
-            document.getElementById("name").style.left = x+10+"px";
-        }
+document.querySelectorAll('path').forEach(e => {
+    e.addEventListener('mousemove', function(event) {
+        var mouseX = event.clientX; // X-coordinate of the mouse pointer
+        var mouseY = event.clientY; // Y-coordinate of the mouse pointer
 
-        e.style.fill = "pink";
+        
+        document.getElementById("name").style.top = mouseY  + 30+ "px";
+        document.getElementById("name").style.left = mouseX + 30 + "px";
+    })
+    e.addEventListener("mouseover", function() {
+        e.style.fill = "#6c9bcf";
         document.getElementById("name").style.opacity = 1;
-        document.getElementById("namep").innerText= e.id;
+        document.getElementById("namep").innerText = e.dataset.name;
     });
     e.addEventListener("mouseleave", function() {
         e.style.fill = "#ececec";

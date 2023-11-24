@@ -231,13 +231,14 @@ body {
 
 #name {
     position: absolute;
-    background-color: var(--color-dark);
+    background-color: var(--color-background);
     width: fit-content;
     opacity: 0;
     border-radius: 5px;
     border: 3px solid var(--color-primary);
     padding: 5px;
     font-size: 1.5rem;
+    z-index: 10000000;
 }
 
 svg path {
