@@ -9,18 +9,36 @@ const countryContainer = document.getElementsByClassName('item');
 const moreInfo = document.getElementsByClassName('info');
 
 //Country info or data
-const flag = document.querySelectorAll('#flag');
-const countryNames = document.querySelectorAll('.countryName');
-const capital = document.querySelectorAll('.capital');
-const languages = document.querySelectorAll('.languages');
-const population = document.querySelectorAll('.population');
-const continent = document.querySelectorAll('.continent');
 const map = document.querySelector('.map_view');
 const grid = document.querySelector('.grid_view');
 const mapView = document.getElementById('worldmap-view');
 const gridView = document.getElementById('normal-view');
 
 const darkMode = document.querySelector(".dark-mode");
+
+
+const scrollRevealOption = {
+    distance: "50px",
+    origin: "bottom",
+    duration: 1000,
+  };
+  const scrollRevealOption2 = {
+    distance: "50px",
+    origin: "bottom",
+    duration: 500,
+  };
+
+  const card = document.querySelector('section div');
+  
+  ScrollReveal().reveal(card, {
+    ...scrollRevealOption,
+  });
+  ScrollReveal().reveal('section', {
+    ...scrollRevealOption,
+  });
+  ScrollReveal().reveal(gridView, {
+    ...scrollRevealOption2,
+  });
 
 const nav = document.querySelector('.banner');
 let topOfNav = nav.offsetTop;
